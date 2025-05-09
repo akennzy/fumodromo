@@ -1,0 +1,291 @@
+/* Estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Cabeçalho */
+header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #32cd32;
+    padding-bottom: 15px;
+}
+
+header h1 {
+    color: #2e7d32;
+    font-size: 2.8rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Container do contador */
+.counter-container {
+    margin: 40px 0;
+}
+
+.counter-container h2 {
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.counter {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #2e7d32;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    display: inline-block;
+    padding: 15px 35px;
+    border-radius: 50px;
+    min-width: 220px;
+    box-shadow: 0 6px 15px rgba(50, 205, 50, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+.counter:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(50, 205, 50, 0.4);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 6px 15px rgba(50, 205, 50, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(50, 205, 50, 0.4);
+    }
+}
+
+/* Frases motivacionais */
+.motivation-container {
+    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+    border-left: 6px solid #2e7d32;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.motivation-container p {
+    font-size: 1.5rem;
+    color: #444;
+    font-style: italic;
+}
+
+/* Seção de progresso */
+.progress {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.progress-item {
+    flex: 1;
+    min-width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+}
+
+.progress-item h3 {
+    color: #32cd32;
+    margin-bottom: 10px;
+}
+
+/* Botões */
+.buttons {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background: linear-gradient(135deg, #43a047, #66bb6a);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #388e3c, #43a047);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+#reset-btn {
+    background: linear-gradient(135deg, #e57373, #ef5350);
+}
+
+#reset-btn:hover {
+    background: linear-gradient(135deg, #d32f2f, #e53935);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: modalopen 0.5s;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal, .close-reset-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-modal:hover, .close-reset-modal:hover {
+    color: #555;
+}
+
+.modal-content h2 {
+    color: #32cd32;
+    margin-bottom: 20px;
+}
+
+.modal-content ul {
+    text-align: left;
+    margin-left: 20px;
+    line-height: 1.6;
+}
+
+.modal-content ul li {
+    margin-bottom: 10px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#confirm-reset {
+    background-color: #ff6b6b;
+}
+
+#cancel-reset {
+    background-color: #6c757d;
+}
+
+/* Rodapé */
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    background: linear-gradient(135deg, #f1f8e9, #e0f7fa);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .counter {
+        font-size: 4rem;
+        min-width: 150px;
+    }
+    
+    .motivation-container p {
+        font-size: 1.2rem;
+    }
+    
+    .progress {
+        flex-direction: column;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
