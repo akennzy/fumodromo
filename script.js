@@ -167,6 +167,41 @@ window.addEventListener('click', function(event) {
     }
 });
 
+// Alternar exibição de login/cadastro
+const loginToggleBtn = document.getElementById('login-toggle-btn');
+const loginOptions = document.getElementById('login-options');
+
+loginToggleBtn.addEventListener('click', function() {
+    loginOptions.style.display = loginOptions.style.display === 'flex' ? 'none' : 'flex';
+});
+
+// Login
+const loginForm = document.getElementById('login-form');
+
+loginForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Validação de login com dados armazenados
+    const registeredUser = localStorage.getItem('registeredUser');
+    const registeredPassword = localStorage.getItem('registeredPassword');
+
+    if (username === registeredUser && password === registeredPassword) {
+        alert('Login bem-sucedido!');
+        loginOptions.style.display = 'none';
+    } else {
+        alert('Usuário ou senha inválidos.');
+    }
+});
+
+// Botão de cadastro
+const registerBtn = document.getElementById('register-btn');
+
+registerBtn.addEventListener('click', function() {
+    alert('Funcionalidade de cadastro ainda não implementada.');
+});
+
 // Inicializa a aplicação
 document.addEventListener('DOMContentLoaded', function() {
     updateUI();

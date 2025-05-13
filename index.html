@@ -12,6 +12,19 @@
             <h1>Sua Jornada Sem Fumo</h1>
         </header>
         
+        <!-- Botão de Login -->
+        <div class="login-container">
+            <button id="login-toggle-btn" class="btn">Login / Cadastro</button>
+            <div id="login-options" class="hidden">
+                <form id="login-form">
+                    <input type="text" id="username" placeholder="Usuário" required>
+                    <input type="password" id="password" placeholder="Senha" required>
+                    <button type="submit" class="btn">Entrar</button>
+                </form>
+                <button id="register-btn" class="btn" onclick="window.location.href='register.html'">Cadastrar</button>
+            </div>
+        </div>
+        
         <main>
             <div class="counter-container">
                 <h2>Você está</h2>
@@ -67,7 +80,7 @@
         </div>
         
         <footer>
-            <p>Sua saúde é o mais importante. A cada dia sem fumar, você está mais perto de uma vida melhor!</p>
+            <p>Sua saúde é o mais importante. A cada dia sem fumar, você está mais perto de uma vida melhor.</p>
         </footer>
     </div>
     
