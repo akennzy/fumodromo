@@ -127,6 +127,52 @@ function resetCounter() {
     localStorage.setItem('todaysPhrase', newPhrase);
 }
 
+// Função para fazer login
+async function login(username, password) {
+    try {
+        const response = await fetch('/api/auth.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                action: 'login',
+                username,
+                password
+            })
+        });
+        
+        const data = await response.json();
+        if (data.success) {
+            updateUI();
+            loginOptions.style.display = 'none';
+        } else {
+            alert('Login falhou: ' + data.message);
+        }
+    } catch (error) {
+        console.error('Erro ao fazer login:', error);
+    }
+}
+
+// Função para atualizar progresso
+async function updateUserProgress() {
+    try {
+        await fetch('/api/user.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                action: 'update',
+                days: daysCounter.textContent,
+                money_saved: moneySaved.textContent
+            })
+        });
+    } catch (error) {
+        console.error('Erro ao atualizar progresso:', error);
+    }
+}
+
 // Event Listeners
 
 // Botão de reiniciar contador
@@ -184,15 +230,7 @@ loginForm.addEventListener('submit', function(event) {
     const password = document.getElementById('password').value;
 
     // Validação de login com dados armazenados
-    const registeredUser = localStorage.getItem('registeredUser');
-    const registeredPassword = localStorage.getItem('registeredPassword');
-
-    if (username === registeredUser && password === registeredPassword) {
-        alert('Login bem-sucedido!');
-        loginOptions.style.display = 'none';
-    } else {
-        alert('Usuário ou senha inválidos.');
-    }
+    login(username, password);
 });
 
 // Botão de cadastro
