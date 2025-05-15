@@ -53,13 +53,6 @@ O FumoDromo é uma aplicação web desenvolvida para auxiliar pessoas que deseja
 ## 🔧 Instalação
 
 1. **Instalar o XAMPP**
-   ```sh
-   # Para Ubuntu/Debian
-   sudo apt-get install xampp
-   
-   # Para outras distribuições, baixe o instalador em:
-   # https://www.apachefriends.org/pt_br/index.html
-   ```
 
 2. **Clonar o Repositório**
    ```sh
