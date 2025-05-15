@@ -1,9 +1,0 @@
-CREATE TABLE usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    days_smoke_free INT DEFAULT 0,
-    money_saved DECIMAL(10,2) DEFAULT 0.00,
-    quit_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-);
